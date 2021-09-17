@@ -1,4 +1,4 @@
-import React, { memo, useContext, useEffect, useState } from "react";
+import React, { memo, useContext, useLayoutEffect, useState } from "react";
 import styled from "styled-components";
 import Modal from "react-modal";
 
@@ -69,7 +69,7 @@ const TaskListContainer = (props) => {
 
   const { deleteList, taskListing, updateList } = useContext(GlobalContext);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     localStorage.setItem("TRELLO_TASK_LIST", JSON.stringify(taskListing));
   }, [taskListing]);
 

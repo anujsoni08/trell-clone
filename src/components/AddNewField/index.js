@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useLayoutEffect, useState } from "react";
 import styled from "styled-components";
 import { GlobalContext } from "../../context/GlobalState";
 
@@ -102,7 +102,7 @@ const AddNewField = (props) => {
     formValuesObj[item.key] = "";
   });
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     localStorage.setItem("TRELLO_TASK_LIST", JSON.stringify(taskListing));
   }, [taskListing]);
 

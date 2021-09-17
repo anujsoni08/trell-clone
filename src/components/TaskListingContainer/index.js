@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useLayoutEffect } from "react";
 import styled from "styled-components";
 import { GlobalContext } from "../../context/GlobalState";
 import TaskListContainer from "../TaskListContainer";
@@ -13,7 +13,7 @@ const TaskListingContainerDiv = styled.div`
 const TaskListingContainer = () => {
   const { taskListing } = useContext(GlobalContext);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     localStorage.setItem("TRELLO_TASK_LIST", JSON.stringify(taskListing));
   }, [taskListing]);
 
